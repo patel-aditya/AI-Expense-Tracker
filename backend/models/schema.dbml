@@ -1,0 +1,24 @@
+Table users{
+  id int [pk, increment]
+  name varchar
+  email varchar
+  hashed_password varchar
+  created_at timestamp
+} 
+ 
+Table budgets{
+  id int [pk, increment]
+  category varchar
+  monthly_limit decimal
+  user_id int [ref: > users.id]
+}
+
+Table expenses{
+  id int [pk, increment]
+  description varchar
+  amount decimal
+  category  varchar
+  date timestamp
+  user_id int [ref: > users.id]
+}
+
