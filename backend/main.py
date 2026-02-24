@@ -4,6 +4,8 @@ from database import engine,Base
 from models import user, expense, budget
 from core.config import settings
 
+from routers import auth, expenses
+
 
 # create tables
 Base.metadata.create_all(bind = engine)
@@ -12,6 +14,8 @@ app = FastAPI(title="Expense Tracker")
 
 print("Database connection:", engine)
 
+app.include_router(auth.router)
+app.include_router(expenses.router)
 
 @app.get("/")
 def root():
