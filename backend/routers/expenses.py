@@ -60,8 +60,8 @@ def update_expense(expense_id: int, expense_data: ExpenseUpdate, db: Session = D
     if not expense:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=EXPENSE_NOT_FOUND)
     
-    for filed, value in expense_data.model_dump(exclude_unset=True).items():
-        setattr(expense, filed, value)
+    for field, value in expense_data.model_dump(exclude_unset=True).items():
+        setattr(expense, field, value)
 
     db.commit()
     db.refresh(expense)
