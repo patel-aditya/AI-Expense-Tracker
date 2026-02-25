@@ -15,9 +15,10 @@ router = APIRouter(prefix="/budgets", tags=["budgets"])
 def create_budget(budget_data: BudgetCreate, db: Session = Depends(get_db), current_user = Depends(get_current_user)):
     new_budget = Budget(
         category = budget_data.category,
-        amount = budget_data.monthly_limit,
+        monthly_limit = budget_data.monthly_limit,
         user_id = current_user.id
     )
+
     db.add(new_budget)
     db.commit()
     db.refresh(new_budget)
@@ -29,7 +30,7 @@ def create_budget(budget_data: BudgetCreate, db: Session = Depends(get_db), curr
 @router.get("/", response_model=List[BudgetResponse])
 def get_budgets(db:Session = Depends(get_db), current_user: User = Depends(get_current_user)):
     
-    budgets = db.query(Budget).filter(Budget.id == current_user.id).all()
+    budgets = db.query(Budget).filter(Budget.user_id == current_user.id).all()
 
     return budgets
 
