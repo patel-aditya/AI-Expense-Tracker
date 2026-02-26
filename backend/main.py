@@ -4,7 +4,7 @@ from database import engine,Base
 from models import user, expense, budget
 from core.config import settings
 
-from routers import auth, expenses, budgets
+from routers import auth, expenses, budgets, analytics
 
 
 # create tables
@@ -16,6 +16,7 @@ app = FastAPI(title="Expense Tracker")
 app.include_router(auth.router)
 app.include_router(expenses.router)
 app.include_router(budgets.router)
+app.include_router(analytics.router)
 
 @app.get("/")
 def root():
