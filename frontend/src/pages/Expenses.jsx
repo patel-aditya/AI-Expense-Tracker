@@ -50,42 +50,82 @@ function Expenses() {
   };
 
   return (
-    <div>
-      <h2>Expenses</h2>
+    <div className="flex flex-col items-center gap-8 p-8">
+      <h2 className="text-3xl font-bold text-gray-700">Expenses</h2>
 
-      <form onSubmit={handleAdd}>
-        <input
-          type="number"
-          placeholder="Amount"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        />
+      <div className="bg-white shadow-lg rounded-xl p-6 w-full max-w-2xl">
+        <form onSubmit={handleAdd} className="flex flex-wrap gap-4">
+          <input
+            type="number"
+            className="border border-gray-300 p-2 rounded w-40 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Amount"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+          />
 
-        <input
-          type="text"
-          placeholder="Category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        />
+          <input
+            type="text"
+            className="border border-gray-300 p-2 rounded w-40 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          />
 
-        <input
-          type="text"
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+          <input
+            type="text"
+            className="border border-gray-300 p-2 rounded flex-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
 
-        <button type="submit">Add</button>
-      </form>
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg shadow transition duration-200"
+          >
+            Add Expense
+          </button>
+        </form>
+      </div>
 
-      <ul>
-        {expenses.map((expense) => (
-          <li key={expense.id}>
-            Rs {expense.amount} - {expense.category} - {expense.description} - {new Date(expense.date).toLocaleDateString()}
-            <button onClick={() => handleDelete(expense.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <div className="w-full max-w-3xl">
+        <table className="w-full border border-gray-300 rounded-lg overflow-hidden">
+          <thead className="bg-gray-200">
+            <tr>
+              <th className="p-3 text-left">Price</th>
+              <th className="p-3 text-left">Category</th>
+              <th className="p-3 text-left">Description</th>
+              <th className="p-3 text-left">Date</th>
+              <th className="p-3 text-center">Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {expenses.map((expense) => (
+              <tr key={expense.id} className="border-t">
+                <td className="p-3">₹{expense.amount}</td>
+
+                <td className="p-3">{expense.category}</td>
+
+                <td className="p-3">{expense.description}</td>
+
+                <td className="p-3">
+                  {new Date(expense.date).toLocaleDateString()}
+                </td>
+
+                <td className="p-3 text-center">
+                  <button
+                    onClick={() => handleDelete(expense.id)}
+                    className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

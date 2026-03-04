@@ -22,7 +22,7 @@ class Settings(BaseSettings):
     SECRET_KEY: str = Field(..., description="Secret key for signing jwt token")
 
     ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 1
 
     # CORS
     CORS_ORIGINS: list = [
