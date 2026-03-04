@@ -23,7 +23,7 @@ def category_summary(db:Session = Depends(get_db), current_user:User = Depends(g
 
     return[
         {
-            "Category":r.category,
+            "category":r.category,
             "total":r.total
         }
     for r in results
