@@ -2,6 +2,7 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: "https://ai-expense-tracker-2-0g78.onrender.com",
+  // baseURL: "http://localhost:8000",
 });
 
 api.interceptors.request.use((config) => {
