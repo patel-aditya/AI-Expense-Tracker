@@ -26,9 +26,11 @@ class Settings(BaseSettings):
 
     # CORS
     CORS_ORIGINS: list = [
+        "http://localhost:5173",   # Vite local dev
         "http://localhost:3000",
         "http://localhost:8000",
         "http://127.0.0.1:3000",
+        "https://expense-tracker-kcs85nq4r-tp794444-6796s-projects.vercel.app"
     ]
     CORS_ALLOW_CREDENTIALS: bool = True
     CORS_ALLOW_METHODS: list = ["*"]
