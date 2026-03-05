@@ -28,7 +28,7 @@ function Login() {
         <h2 className="text-3xl font-bold tracking-[1px] pl-3 pr-3 items-center font-medium animate-left-to-right bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text">
           Welcome
         </h2>
-        <p className="text-sm text-gray-700">Please login to your account</p>
+        <p className="text-sm text-gray-700">Please login to your account!</p>
       </div>
 
       <form onSubmit={handleSubmit}>
