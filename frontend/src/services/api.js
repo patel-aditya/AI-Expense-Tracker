@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "https://expense-tracker-dun-six-74.vercel.app",
 });
 
 api.interceptors.request.use((config) => {
@@ -11,7 +11,7 @@ api.interceptors.request.use((config) => {
     config.headers.Authorization = `Bearer ${token}`;
   }
 
-  return config;  // VERY IMPORTANT
+  return config; // VERY IMPORTANT
 });
 
 export default api;
