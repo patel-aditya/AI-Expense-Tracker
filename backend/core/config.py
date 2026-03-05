@@ -30,6 +30,9 @@ class Settings(BaseSettings):
         "http://localhost:3000",
         "http://localhost:8000",
         "http://127.0.0.1:3000",
+        "https://ai-expense-tracker-2-0g78.onrender.com/"
+        ,
+        "https://expense-tracker-teal-psi.vercel.app",
         "postgresql://expense_tracker_kv5i_user:QrmMIl7S4yNFSptrKahpd7wuHFC5CdpB@dpg-d6klegfpm1nc73f1h71g-a:5432/expense_tracker_kv5i"
     ]
     CORS_ALLOW_CREDENTIALS: bool = True
