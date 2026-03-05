@@ -26,8 +26,9 @@ class Settings(BaseSettings):
 
     # CORS
     CORS_ORIGINS: list = [
-    "https://ai-expense-tracker-2-0g78.onrender.com",   # ✅ comma added
-    "https://expense-tracker-3ns0qocsf-tp794444-6796s-projects.vercel.app",  # ✅ Vercel URL added
+    "https://expense-tracker-nu-one-87.vercel.app",  # ✅ new URL
+    "https://expense-tracker-3ns0qocsf-tp794444-6796s-projects.vercel.app",  # keep old too
+    "https://ai-expense-tracker-2-0g78.onrender.com",
     "http://localhost:5173",
     "http://localhost:3000",
     "http://localhost:8000",
