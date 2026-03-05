@@ -19,8 +19,10 @@ function Dashboard() {
       }
     };
     fetchAnalytics();
+
   }, []);
 
+  if(totalBudget - totalExpense < 0) alert("Warning: You have exceeded your budget!");
   return (
     <div className="min-h-screen bg-gray-100 p-8 flex flex-col gap-8">
       {/* header */}
@@ -47,6 +49,7 @@ function Dashboard() {
             {" "}
             Total Budget:{" "}
             <p className="text-3xl text-red-500 mt-2">₹ {totalBudget}</p>
+            <p>{totalBudget - totalExpense < 0 ? <h1>Warning: You have exceeded your budget!</h1> : <p/> }</p>
           </h2>
         </div>
 
