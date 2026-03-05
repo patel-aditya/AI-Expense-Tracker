@@ -26,15 +26,13 @@ class Settings(BaseSettings):
 
     # CORS
     CORS_ORIGINS: list = [
-        "http://localhost:5173",   # Vite local dev
-        "http://localhost:3000",
-        "http://localhost:8000",
-        "http://127.0.0.1:3000",
-        "https://ai-expense-tracker-2-0g78.onrender.com/"
-        ,
-        "https://expense-tracker-teal-psi.vercel.app",
-        "postgresql://expense_tracker_kv5i_user:QrmMIl7S4yNFSptrKahpd7wuHFC5CdpB@dpg-d6klegfpm1nc73f1h71g-a:5432/expense_tracker_kv5i"
-    ]
+    "https://ai-expense-tracker-2-0g78.onrender.com",   # ✅ comma added
+    "https://expense-tracker-3ns0qocsf-tp794444-6796s-projects.vercel.app",  # ✅ Vercel URL added
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1:3000"
+]
     CORS_ALLOW_CREDENTIALS: bool = True
     CORS_ALLOW_METHODS: list = ["*"]
     CORS_ALLOW_HEADERS: list = ["*"]
