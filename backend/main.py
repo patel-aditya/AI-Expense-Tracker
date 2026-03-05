@@ -17,7 +17,7 @@ app = FastAPI(title="Expense Tracker")
 # enabling communication between frontend and backend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins = ["http://localhost:5173"],
+    allow_origins = settings.CORS_ORIGINS,
     allow_credentials = settings.CORS_ALLOW_CREDENTIALS,
     allow_methods = settings.CORS_ALLOW_METHODS,
     allow_headers = settings.CORS_ALLOW_HEADERS,
