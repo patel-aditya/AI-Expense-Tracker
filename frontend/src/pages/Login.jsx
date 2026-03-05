@@ -1,5 +1,5 @@
-import { useState, Link } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { loginUser } from "../services/authService";
 
 function Login() {
@@ -24,13 +24,12 @@ function Login() {
   };
   return (
     <div className="flex flex-col items-center gap-6 p-8 rounded-2xl">
-        <div>
-
-      <h2 className="text-3xl font-bold tracking-[1px] pl-3 pr-3 items-center font-medium animate-left-to-right bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text">
-        Welcome
-      </h2>
+      <div>
+        <h2 className="text-3xl font-bold tracking-[1px] pl-3 pr-3 items-center font-medium animate-left-to-right bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text">
+          Welcome
+        </h2>
         <p className="text-sm text-gray-700">Please login to your account</p>
-        </div>
+      </div>
 
       <form onSubmit={handleSubmit}>
         <div>
@@ -53,8 +52,7 @@ function Login() {
           />
         </div>
 
-         {error && <p className="text-red-500">{error}</p>}
-
+        {error && <p className="text-red-500">{error}</p>}
 
         <div className="flex justify-center">
           <button
@@ -67,7 +65,10 @@ function Login() {
       </form>
 
       <p>
-        Don't have an account? <Link to="/register" className="text-blue-400">Register</Link>
+        Don't have an account?{" "}
+        <Link to="/register" className="text-blue-400">
+          Register
+        </Link>
       </p>
     </div>
   );
